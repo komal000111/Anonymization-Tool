@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Anonymization Technique and Columns</title>
+</head>
+<body>
+    <h1>Select Anonymization Technique and Columns</h1>
+    <form action="/anonymize" method="post">
+        <input type="hidden" name="filename" value="{{ filename }}">
+        <select name="technique">
+            <option value="masking">Data Masking</option>
+            <option value="swapping">Data Swapping</option>
+            <option value="pseudonymization">Data Pseudonymization</option>
+            <option value="synthetic">Synthetic Data</option>
+        </select>
+        <br>
+        <label for="columns">Select Columns:</label><br>
+        {% for column in columns %}
+            <input type="checkbox" id="{{ column }}" name="columns" value="{{ column }}">
+            <label for="{{ column }}">{{ column }}</label><br>
+        {% endfor %}
+        <br>
+        <button type="submit">Anonymize</button>
+    </form>
+</body>
+</html>

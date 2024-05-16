@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Records</title>
+</head>
+<body>
+    <h1>Previous Records</h1>
+   
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Record ID</th>
+                <th>User ID</th>
+                <th>Original Data</th>
+                <th>Anonymized Data</th>
+                <th>Data Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record[0] }}</td> <!-- Assuming record[0] is the ID -->
+                <td>{{ record[1] }}</td> <!-- Assuming record[1] is the user_id -->
+                <td>{{ record[2] }}</td> <!-- Assuming record[2] is the original_data -->
+                <td>{{ record[3] }}</td> <!-- Assuming record[3] is the anonymized_data -->
+                <td>{{ record[4] }}</td> <!-- Assuming record[4] is the data_type -->
+                <td>
+                    <form action="/delete_record/{{ record[0] }}" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .password-field input[type="password"],
+        .confirm-password-field input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #0c0c0c;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        .navbar input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .navbar button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #0056b3;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://dedomena.ai/static/img/blogs/images/unlocking_the_full_potential_of_time_series_data_with_synthetic_data.webp); /* Replace 'path/to/background/image.jpg' with the actual path to your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+        footer {
+            background-color: #0c0c0c;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .password-field .error,
+        .confirm-password-field .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .container {
+            width: 35%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 4px; /* Reduced spacing */
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 10px; /* Reduced spacing */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-check-label {
+            font-size: 12px;
+        }
+
+        .login-links {
+            margin-top: 10px;
+        }
+
+        .login-links p {
+            margin: 0; /* Remove default paragraph margin */
+        }
+
+        .login-links a {
+            text-decoration: none;
+            color: #007bff;
+            margin-left: 10px; /* Add space between links */
+        }
+
+        .login-links a:hover {
+            text-decoration: underline;
+        }
+
+        .bold-text {
+            font-weight: bold;
+            font-size: 0.9em; /* Adjust font size as needed */
+        }
+
+        /* Button styles */
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class="active">Home</a>
+        <a href="/contactForm" target="_blank">Contact</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/feedback">Feedback</a>
+        <a href ="/admin_login"> Admin</a>
+        
+        <a href="/login" class="btn">Login</a>
+        <a href="/registerr" class="btn btn-secondary">Register</a>
+        </form>
+        
+    </header>
+    <div class="container">
+        <form id="registrationForm" method="POST">
+            {{ form.csrf_token }}
+            
+            <!-- Title -->
+            <div class="form-group">
+                <label for="name_prefix">Title</label>
+                {{ form.name_prefix(class="form-control") }}
+                <span id="namePrefixError" class="error" style="display: none;"></span>
+            </div>
+
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                {{ form.first_name(class="form-control") }}
+                <span id="firstNameError" class="error" style="display: none;"></span>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                {{ form.last_name(class="form-control") }}
+                <span id="lastNameError" class="error" style="display: none;"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                {{ form.email(class="form-control") }}
+                <span id="emailError" class="error" style="display: none;"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group password-field">
+                <label for="password">Password</label>
+                {{ form.password(class="form-control", id="password") }}
+                {% for error in form.password.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            
+            <!-- Confirm Password -->
+            <div class="form-group confirm-password-field">
+                <label for="confirm_password">Confirm Password</label>
+                {{ form.confirm_password(class="form-control", id="confirm_password") }}
+                <span id="confirmPasswordError" class="error"></span>
+                {% for error in form.confirm_password.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            
+            <!-- Address -->
+            <div class="form-group">
+                <label for="address">Address</label>
+                {{ form.address(class="form-control", id="address") }}
+                {% for error in form.address.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            
+            <!-- City -->
+            <div class="form-group">
+                <label for="address_city">City</label>
+                {{ form.address_city(class="form-control") }}
+                {% for error in form.address_city.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            
+            <!-- State -->
+            <div class="form-group">
+                <label for="address_state">State</label>
+                {{ form.address_state(class="form-control") }}
+                {% for error in form.address_state.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            
+            <!-- Pincode -->
+            <div class="form-group">
+                <label for="address_pincode">Pincode</label>
+                {{ form.address_pincode(class="form-control") }}
+                {% for error in form.address_pincode.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            
+            <!-- Country -->
+            <div class="form-group">
+                <label for="country">Country</label>
+                {{ form.country(class="form-control") }}
+                {% for error in form.country.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            
+            <!-- Security Question -->
+            <div class="form-group">
+                <label for="security_question">Security Question</label>
+                {{ form.security_question(class="form-control") }}
+                {% for error in form.security_question.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            
+            <!-- Security Answer -->
+            <div class="form-group">
+                <label for="security_answer">Security Answer</label>
+                {{ form.security_answer(class="form-control") }}
+                {% for error in form.security_answer.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            
+            <!-- Captcha -->
+            <div>
+                {{ form.captcha_answer.label }} 
+                {{ form.captcha_answer(size=10) }} 
+                <p>Solve: {{ captcha }}</p> 
+                {% for error in form.captcha_answer.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agree_terms" name="agree_terms">
+                    <label class="form-check-label" for="agree_terms">
+                        I agree to the <a href="https://drive.google.com/file/d/1UxanQ5jJApTTKRz76664CcR6APHDTz2B/view?usp=drivesdk" target="_blank">terms and conditions</a>
+                    </label>
+                </div>
+                <span id="agreeTermsError" class="error" style="display: none;"></span>
+            </div>
+           
+            <!-- Register Button -->
+            <div class="formgroup-">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+            <div class="login-links">
+                <p>If you are already a user, <a href="login">Login</a></p>   <p>Forgot your password? <a href="forgot_password">Reset here</a></p>
+            </div>
+        </form>
+    </div>
+    <footer>
+        &copy; 2024 Data Anonymization
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('registrationForm').addEventListener('submit', function(event) {
+                var password = document.getElementById('password').value;
+                var confirmPassword = document.getElementById('confirm_password').value;
+    
+                if (password !== confirmPassword) {
+                    event.preventDefault();
+                    document.getElementById('confirmPasswordError').innerText = 'Passwords must match';
+                } else {
+                    document.getElementById('confirmPasswordError').innerText = '';
+                }
+    
+                var termsAgreed = document.getElementById('agree_terms').checked;
+                if (!termsAgreed) {
+                    event.preventDefault();
+                    document.getElementById('agreeTermsError').innerText = 'Please agree to the terms and conditions';
+                } else {
+                    document.getElementById('agreeTermsError').innerText = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

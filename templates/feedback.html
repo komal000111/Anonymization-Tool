@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://dedomena.ai/static/img/blogs/images/unlocking_the_full_potential_of_time_series_data_with_synthetic_data.webp");
+            background-repeat: no-repeat;
+            background-size: 40%;
+            background-position: left centers;
+            background-color: #fefeff;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .navbar {
+            overflow: hidden;
+            background-color: #0c0c0c;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        .navbar input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .navbar button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #0056b3;
+        }
+
+         
+        footer {
+            background-color: #0c0c0c;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .container {
+            width: calc(45% - 10px); /* Set width to 50% of the parent container minus 20px for padding */
+            margin: 50px 10px; /* Adjust margin for spacing */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            float: right;
+            box-sizing: border-box;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .table-container {
+            width: calc(45% - 10px); /* Set width to 50% of the parent container minus 20px for padding */
+            margin: 50px 10px; /* Adjust margin for spacing */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            float: left;
+            box-sizing: border-box; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #0c0c0c;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class="active">Home</a>
+        <a href="/contactForm" target="_blank">Contact</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/feedback">Feedback</a>
+        <a href ="/admin_login"> Admin</a>
+        
+        <a href="/login" class="btn">Login</a>
+        <a href="/registerr" class="btn btn-secondary">Register</a>
+       
+        
+    </header>
+    <div class="table-container">
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Message</th>
+                <th>Reply</th>
+            </tr>
+            {% for feedback in feedback_data %}
+            <tr>
+                <td>{{ feedback[0] }}</td> <!-- Name -->
+                <td>{{ feedback[1] }}</td>
+                <td>{{ feedback[2] }}</td> <!-- Email -->
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="container">
+        <h2>Feedback</h2>
+        <form action="/feedback" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <footer>
+        &copy; 2024 Data Anonymization
+    </footer>
+</body>
+</html>

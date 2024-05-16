@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            background-image: url('https://img.freepik.com/free-vector/abstract-background-with-flowing-particles-design_1048-13879.jpg?t=st=1715073109~exp=1715076709~hmac=2b339a85fdaad90c55f072beac9a51b948d1b6d497d37e7046b2148416bf7909&w=740');
+                background-size: cover;
+                background-position: center;
+        }
+        
+        #container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+       
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            color:#fff
+        }
+    
+        input[type="file"] {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    
+        input[type="submit"], button {
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        input[type="submit"]:hover, button:hover {
+            background-color: #45a049;
+        }
+    
+        #downloadLink {
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        #downloadButton {
+            padding: 10px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        #downloadButton:hover {
+            background-color: #0073e6;
+        }
+        .navbar {
+        overflow: hidden;
+        background-color: #0c0c0c;
+        padding: 10px 0;
+        position: fixed; /* Fixed position to keep it at the top */
+        width: 100%; /* Full width */
+        top: 0; /* Position at the top */
+        z-index: 1000; /* Ensure it's above other content */
+    }
+    
+            .navbar a {
+                float: left;
+                display: block;
+                color: #fff;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+            }
+            
+            .navbar input[type="text"] {
+                padding: 8px;
+                border: none;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+    
+            .navbar button {
+                padding: 8px 15px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+    
+            .navbar button:hover {
+                background-color: #0056b3;
+            }
+    
+            .container {
+                max-width: 800px;
+                margin: 0px auto 20px 50px;;
+                text-align: left;
+                color: #f5f3f3; /* Moved text color to container */
+              
+                padding: 20px; /* Added padding for space */
+            }
+            .white-title {
+             color: white;
+}
+
+            footer {
+                background-color: #0c0c0c;
+                color: #fff;
+                text-align: center;
+                padding: 10px 0;
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+            }
+            h2 {
+        color: #ffffff; /* Change to your desired color code */
+    }
+    .white-heading {
+    color: white;
+}
+
+    
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Anonymized Dataset</title>
+</head>
+<body>
+    <header class="navbar" >
+        <a href="/" class="active">Home</a>
+        <a href="/contactForm" target="_blank">Contact</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/feedback">Feedback</a>
+        
+        
+        <a href="/logout" class="btn">Logout</a>
+       
+        </form>
+        
+    </header>
+    <h1 class="white-heading" >Download Anonymized Dataset</h1>
+    <a  class="white-heading" href="/downlload/{{ filename }}">Download Anonymized Dataset</a>
+    <footer>
+        &copy; 2024 Data Anonymization
+</footer>
+</body>
+</html>

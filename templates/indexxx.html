@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&display=swap">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover; /* or contain */
+            background-position: center 1;
+            height: fit-content; /* Adjust the height to fit content */
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #0c0c0c;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        .navbar input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .navbar button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0px auto 20px 50px;;
+            text-align: left;
+            color: #f5f3f3; /* Moved text color to container */
+            padding: 20px; /* Added padding for space */
+        }
+        /* Additional CSS for image slider */
+        .slide {
+            width: 100%;
+            height: 88%; /* Adjust height as needed */
+            overflow: hidden;
+            position: center;
+            margin-bottom: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .slides {
+            display: flex;
+            width: 100%; /* Set to 100% to match slider width */
+            height: 100%; /* Set to 100% to match slider height */
+        }
+
+        .slide {
+            width: 100%; /* Set each slide to occupy 100% of the slider width */
+            transition: 20s;
+        }
+
+        .slide img {
+            width: 100%; /* Ensure the image fills the slide */
+            height: 100%; /* Ensure the image fills the slide */
+            object-fit: contain; /* Ensure the entire image is visible without cropping */
+        }
+
+        h1 {
+            color: #f5f3f3;
+            margin-bottom: 20px; /* Added margin-bottom for space */
+        }
+
+        p {
+            color: #f1eeee;
+            margin-bottom: 20px; /* Added margin-bottom for space */
+        }
+        .navbar .btn {
+            margin-left: 10px; /* Add some space between buttons */
+        }
+        .btn {
+            display: inline-block;
+            padding: 20px 30px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+            margin-right: 10px; /* Added margin-right for space between buttons */
+        }
+
+        .btn-secondary {
+            background-color: #047af8;
+        }
+
+        .btn-secondary:hover {
+            background-color: #495057;
+        }
+
+        /* Footer style */
+        footer {
+            background-color: #0c0c0c;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .text,
+        .text1,
+        .text2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif /* Use the chosen font */
+        }
+
+        .text {
+            font-size: 50px; /* Adjust font size as needed */
+        }
+
+        .text1,
+        .text2 {
+            font-size: 35px; /* Adjust font size as needed */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class="active">Home</a>
+        <a href="/contactForm" target="_blank">Contact</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/feedback">Feedback</a>
+        <a href ="/admin_login"> Admin</a>
+        
+        <a href="/login" class="btn">Login</a>
+        <a href="/registerr" class="btn btn-secondary">Register</a>
+        </form>
+        
+    </header>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="https://img.freepik.com/free-vector/gradient-technology-cyber-background_23-2149112205.jpg"alt="Image 1">
+                <div class="text">Welcome To Anonymization Tool</div>
+            </div>
+            <div class="slide">
+                <img src="https://img.freepik.com/free-vector/gradient-futuristic-background-with-connection-concept_23-2149104857.jpg?t=st=1714996223~exp=1714999823~hmac=89f5b860f918d573356d37be51cceafde4b2a4e6ff57094829e31ec14754c65d&w=740" alt="Image 2">
+                <div class="text1">In our tool, we employ advanced algorithms to transform sensitive datasets and images into anonymized formats. This process ensures that personal or sensitive information is obscured or removed, protecting privacy while still allowing for valuable analysis and utilization in various tasks and applications.</div>
+            </div>
+            <div class="slide">
+                <img src="https://img.freepik.com/free-vector/gradient-futuristic-background-with-connection-concept_23-2149104857.jpg?t=st=1714996223~exp=1714999823~hmac=89f5b860f918d573356d37be51cceafde4b2a4e6ff57094829e31ec14754c65d&w=740" alt="Image 3">
+                <div class="text2">On our website, users can utilize our anonymization tool for both datasets and images, following a simple process: they upload their dataset or image file, click on the 'Anonymize' button, and then download the anonymized data or image after the process is complete.</div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for image slider
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
+    <footer>
+        &copy; 2024 Data Anonymization
+    </footer>
+</body>
+</html>

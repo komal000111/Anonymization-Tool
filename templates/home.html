@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    {% if form %}
+      <form method="POST" action="/" novalidate>
+        {{ form.csrf_token }}
+        {{ form.captcha_id }} <!-- Add this! It's the hidden form field. -->
+
+        {{form['comment'].label}}<br>
+        {{form['comment'](rows='3', cols='30')}}<br>
+        {% for error in form['comment'].errors %}
+          <span class="message">{{ error }}</span><br>
+        {% endfor %}
+
+        <!-- Add this! It's the math captcha. -->
+        <img src="data:image/jpeg;base64,{{form.captcha_b64_img_str}}"/><br>
+        {{form['captcha_answer'].label}}<br>
+        {{form['captcha_answer']}}<br>
+        {% for error in form['captcha_answer'].errors %}
+          <span class="message">{{ error }}</span><br>
+        {% endfor %}
+
+        <br>
+        <input type="submit" value="Submit" class="button">
+      </form>
+    {% endif %}
+
+    <!-- Optional -->
+    {% if message %}
+      {{ message }}
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://img.freepik.com/free-vector/abstract-secure-technology-background_23-2148331624.jpg?t=st=1715001194~exp=1715004794~hmac=7491203c02fa08e08f19d10db9a9c7f9c1f648b4f82e2fb83bb6e215319cde08&w=740");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        button[type="submit"] {
+                    background-color: #544caf;
+                    color: white;
+                    padding: 14px 20px;
+                    margin: 8px 0;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    width: 25%;
+                    transition: background-color 0.3s ease;
+                }
+        
+                button[type="submit"]:hover {
+                    background-color: #45a049;
+                }
+        
+                input[type="submit"] {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 14px 20px;
+                    margin: 8px 0;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    width: 100%;
+                    transition: background-color 0.3s ease;
+                }
+        
+                input[type="submit"]:hover {
+                    background-color: #45a049;
+                }
+        
+                .error {
+                    color: red;
+                    font-size: 14px;
+                }
+                .navbar {
+            overflow: hidden;
+            background-color: #0c0c0c;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        .navbar input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .navbar button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0px auto 20px 50px;;
+            text-align: left;
+            color: #f5f3f3; /* Moved text color to container */
+            padding: 20px; /* Added padding for space */
+        }
+        footer {
+            background-color: #0c0c0c;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+            </style>
+    <title>Admin Feedback</title>
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class="active">Home</a>
+        <a href="/contactForm" target="_blank">Contact</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/feedback">Feedback</a>
+        
+        
+        <a href="/logout" class="btn">Logout</a>
+        
+        </form>
+        
+    </header>
+    <div style="color: white;">
+    <h1>Admin Feedback</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Action</th>
+            <th>Reply Section</th>
+        </tr>
+        {% for feedback in feedback_data %}
+        <tr>
+            <td>{{ feedback[1] }}</td> <!-- Name -->
+            <td>{{ feedback[2] }}</td> <!-- Email -->
+            <td>{{ feedback[3] }}</td> <!-- Message -->
+            <td>{{ feedback[4] }}</td> 
+            <td>
+                <form method="post">
+                    <input type="hidden" name="delete_id" value="{{ feedback[0] }}">
+                    <button type="submit">Delete</button>
+                </form>
+                <form method="post">
+                    <input type="hidden" name="reply_id" value="{{ feedback[0] }}">
+                    <textarea name="reply_message" placeholder="Enter your reply"></textarea> <!-- Ensure this line is present -->
+                    <button type="submit">Reply</button>
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    <footer>
+        &copy; 2024 Data Anonymization
+</footer>
+</body>
+</html>

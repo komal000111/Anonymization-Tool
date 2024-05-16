@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymize Data</title>
+</head>
+<body>
+    <h1>Anonymize Data</h1>
+    <form action="/annonymize" method="post">
+        <label for="column">Select a column to anonymize:</label>
+        <select name="column" id="column">
+            {% for column in columns %}
+                <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <!-- Hidden input field to pass the filename -->
+        <input type="hidden" name="filename" value="{{ filename }}">
+        <button type="submit">Anonymize</button>
+    </form>
+</body>
+</html>

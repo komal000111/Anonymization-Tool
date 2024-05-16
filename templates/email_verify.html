@@ -1,0 +1,10 @@
+{% extends 'app.html' %}
+
+{% block content %}
+<div style="color: white;">
+    <h1>Please Verify Your Email</h1>
+    <p>Dear {{ email }},</p>
+    <p>Thank you for registering! An email with the OTP has been sent to your registered email address.</p>
+    <a href="{{ url_for('verify_email') }}" style="color: blue;">Click here to verify your email</a>
+</div>
+{% endblock %}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://img.freepik.com/free-vector/abstract-secure-technology-background_23-2148331624.jpg?t=st=1715001194~exp=1715004794~hmac=7491203c02fa08e08f19d10db9a9c7f9c1f648b4f82e2fb83bb6e215319cde08&w=740");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center 20%;
+            text-align: right;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #0c0c0c;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .navbar button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            max-width: calc(100% - 250px); /* Adjusted max-width to leave space for h1 */
+    margin: 0 auto 20px 20px; /* Adjusted margin-right for container */
+    padding: 20px; /* Added padding for space */
+    text-align: right; /* Align content to the right */
+}
+        footer {
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Added CSS for alignment */
+        h1 {
+            margin-right:1px;
+            display: inline-block;  /* Center-align h1 */
+        }
+
+        h2 {
+            margin-right: 150px;
+            color:#000000
+             /* Right-align h2 */
+        }
+
+        ul li a {
+            margin-right: 99px; 
+            color: #000000; /* Change the color to red (#ff0000) */
+        }
+
+        .container ul {
+            margin-right: 99px; /* Adjust as needed */
+        }
+
+        .container ul li {
+            margin-bottom: 10px; /* Adjust as needed */
+        }
+
+        /* Adjusted margin-right for navbar links */
+        .navbar a {
+            margin-right: 20px;
+        }
+
+        /* Added CSS for content container */
+        .content-container {
+            background-color: #b9b9b9; /* Set background color for the container */
+            padding: 20px; /* Add padding to the container */
+            border-radius: 5px; /* Add border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+            margin-left: 630px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+<header class="navbar">
+    <a href="/" class="active">Home</a>
+    <a href="/contactForm" target="_blank">Contact</a>
+    <a href="/aboutus">About Us</a>
+    <a href="/feedback">Feedback</a>
+    <a href="/logout" class="btn">Logout</a>
+</header>
+<div class="container" style="color: rgb(255, 255, 255);">
+    <h1>Welcome to Your Dashboard</h1>
+    <div class="content-container"> <!-- Added content container -->
+        <h2>Anonymization</h2>
+        <ul>
+            <li><a href="/aa">Upload Dataset</a></li>
+            
+            <li><a href="/aaaa">Kanonymity</a></li>
+            <li><a href="/com">Compress Image</a></li>
+            <li><a href="/previous_records">Previous Records</a></li>
+        </ul>
+    </div>
+</div>
+<footer>&copy; 2024 Data Anonymization</footer>
+</body>
+</html>

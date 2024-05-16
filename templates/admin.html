@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Homepage</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='9e0b6e10a6196c9a641b0ea5b6600121.jpg') }}");
+            background-repeat: no-repeat;
+            background-size: 40%;
+            background-position: left centers;
+            background-color: #fefeff;
+            background-image: url("https://img.freepik.com/free-vector/abstract-secure-technology-background_23-2148331624.jpg?t=st=1715001194~exp=1715004794~hmac=7491203c02fa08e08f19d10db9a9c7f9c1f648b4f82e2fb83bb6e215319cde08&w=740");
+            background-size: cover;
+            background-position: center;
+        }
+        /* Body Styles */
+        .navbar {
+            overflow: hidden;
+            background-color: #0c0c0c;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        .navbar input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .navbar button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #0056b3;
+        }
+
+         
+        footer {
+            background-color: #0c0c0c;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Container Styles */
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #201261;
+        }
+
+        /* Admin Links Styles */
+        .admin-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .admin-links a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .admin-links a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class="active">Home</a>
+        <a href="/contactForm" target="_blank">Contact</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/feedback">Feedback</a>
+        <a href="/logout" class="btn">Logout</a>
+        </form>
+        
+    </header>
+    <div class="container">
+        <h1>Admin Homepage</h1>
+        <div class="admin-links">
+            <!-- Link to manage users -->
+            <a href="/manage_users">Manage Users</a>
+            <!-- Link to view feedback -->
+            <a href="/admin/feedback">View Feedback</a>
+            <!-- Add more links as needed -->
+        </div>
+    </div>
+     <footer>
+        &copy; 2024 Data Anonymization
+</footer>
+</body>
+</html>

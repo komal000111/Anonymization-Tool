@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://dedomena.ai/static/img/blogs/images/unlocking_the_full_potential_of_time_series_data_with_synthetic_data.webp");
+            background-size: cover;
+            background-position: right;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: hsl(0, 0%, 100%);
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .content {
+            background-color: #dbcdcd;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+            text-decoration: none; /* Remove underlines */
+        }
+
+        .tab:hover {
+            background-color: #000000;
+        }
+
+        .tab.active {
+            background-color: #000203;
+        }
+
+        .tab-content {
+            padding: 30px; /* Add padding to create space around the tab content */
+            margin-top: 20px;
+            display: none;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            background-color: #dbcdcd;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        p {
+            color: black; /* Set the color of paragraph text to black */
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Algorithms used in this website for Data Anonymization</h1>
+        
+        <div class="content">
+            <p>In recent years, escalation of technology led to an increase in the capability to record and store personal data about consumers and individuals. With this information almost anyone can track or know more about a person’s life. This raised concerns on personal data misuses in many different ways. To mitigate these issues, some de-identification methodologies have recently been proposed that, in some well controlled circumstances, allow for the re-use of personal data in privacy-preserving ways. So one such particular method is Data Anonymization. Data anonymization ensures that even if de-identified data is stolen, it is very hard to re-identify it. The main objective of this web application is to make it easy for a user to anonymize the data.</p>
+        </div>
+        
+        <div class="tabs">
+            
+            <button class="tab" onclick="openTab('kanonymity')">k-Anonymity</button>
+            
+        </div>
+        
+        <div id="kanonymity" class="tab-content">
+            <h2>k-Anonymity</h2>
+            <p>In the k-anonymity privacy model, the k is a number that represents the size of a group of users in the dataset who belongs to a single equivalent class. If for any individual in the data set, there are at least k-1 individuals who have the same properties, then we have achieved k-anonymity for the data set. The k-anonymity model protects users privacy by placing at least k users in an equivalence class with same QI values. Hence, the probability of re-identifying someone from the anonymized data becomes 1/k. 
+            </p>
+        </div>
+        
+       
+    </div>
+    
+    <script>
+        function openTab(tabName) {
+            var i, tabContent, tabLinks;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabLinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
